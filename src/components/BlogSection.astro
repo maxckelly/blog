@@ -1,0 +1,44 @@
+---
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+---
+
+<section class="section">
+  <h2 class="section-header">Blog</h2>
+  {posts.map((post) => (
+    <a href={`/blog/${post.id}`} class="post-row">
+      <span class="post-title">{post.data.title}</span>
+      <span class="post-date muted">
+        {post.data.date.toLocaleDateString('en-US', {
+          month: 'short',
+          day: 'numeric',
+          year: 'numeric',
+        })}
+      </span>
+    </a>
+  ))}
+</section>
+
+<style>
+  .post-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.4rem 0;
+    border-bottom: none;
+    gap: 1rem;
+  }
+  .post-row:hover .post-title {
+    color: var(--accent);
+  }
+  .post-title {
+    transition: color 0.2s;
+  }
+  .post-date {
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+</style>

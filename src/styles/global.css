@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  --bg: #0a0a0a;
+  --text: #d4d4d4;
+  --text-muted: #737373;
+  --accent: #86efac;
+  --link: #4ade80;
+  --max-width: 680px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', 'Cascadia Code', monospace;
+  background-color: var(--bg);
+  background-image: url('/bg-lines.svg');
+  background-size: 800px 600px;
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 4rem 1.5rem 6rem;
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--text-muted);
+  transition: border-color 0.2s;
+}
+
+a:hover {
+  border-color: var(--text);
+}
+
+h1, h2, h3 {
+  font-weight: 500;
+}
+
+.section {
+  margin-top: 3.5rem;
+}
+
+.section-header {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+.muted {
+  color: var(--text-muted);
+}
+
+ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+}
+
+ul li {
+  margin-bottom: 0.35rem;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
