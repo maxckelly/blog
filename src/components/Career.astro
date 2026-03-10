@@ -21,7 +21,7 @@ import { career } from '../data/resume';
           {job.start}{job.end ? ` - ${job.end}` : ' -'}
         </span>
       </div>
-      <span class="role-type muted">{job.type}</span>
+      <div class="role-type muted">{job.type}</div>
     </div>
   ))}
 </section>
@@ -38,6 +38,7 @@ import { career } from '../data/resume';
   }
   .role-type {
     font-size: 0.75rem;
+    display: block;
   }
   .dates {
     font-size: 0.8rem;
