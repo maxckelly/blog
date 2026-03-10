@@ -1,9 +1,12 @@
+export type RoleType = "Full time" | "Part time" | "Contract";
+
 export interface Job {
   role: string;
   company: string;
   url?: string;
   start: string;
   end?: string;
+  type: RoleType;
 }
 
 export const career: Job[] = [
@@ -12,6 +15,7 @@ export const career: Job[] = [
     company: "Sortd",
     url: "https://app.getsortd.co/",
     start: "2025",
+    type: "Full time",
   },
   {
     role: "Software Engineer",
@@ -19,6 +23,7 @@ export const career: Job[] = [
     url: "https://coreflow.dev/",
     start: "2025",
     end: "2025",
+    type: "Contract",
   },
   {
     role: "Founder & Software Engineer",
@@ -26,6 +31,7 @@ export const career: Job[] = [
     url: "https://www.alifelived.app/",
     start: "2024",
     end: "2025",
+    type: "Full time",
   },
   {
     role: "Software Engineer",
@@ -33,6 +39,7 @@ export const career: Job[] = [
     url: "https://www.meandu.com/",
     start: "2023",
     end: "2025",
+    type: "Full time",
   },
 ];
 
