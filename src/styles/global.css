@@ -15,18 +15,42 @@
   box-sizing: border-box;
 }
 
+@keyframes drift-slow {
+  from { background-position: 0 0; }
+  to { background-position: 800px 600px; }
+}
+
+@keyframes drift-fast {
+  from { background-position: 0 0; }
+  to { background-position: 800px 600px; }
+}
+
 html {
   font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', 'Cascadia Code', monospace;
   background-color: var(--bg);
-  background-image: url('/bg-lines.svg');
+  background-image: url('/bg-lines-only.svg');
   background-size: 800px 600px;
+  animation: drift-slow 120s linear infinite;
   color: var(--text);
   font-size: 15px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
 
+html::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url('/bg-dots-only.svg');
+  background-size: 800px 600px;
+  animation: drift-fast 40s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
 body {
+  position: relative;
+  z-index: 1;
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 4rem 1.5rem 6rem;
