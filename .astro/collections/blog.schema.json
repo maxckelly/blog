@@ -26,6 +26,9 @@
         "description": {
           "type": "string"
         },
+        "status": {
+          "type": "string"
+        },
         "$schema": {
           "type": "string"
         }

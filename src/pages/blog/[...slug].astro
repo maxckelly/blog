@@ -28,6 +28,7 @@ const { Content } = await render(post);
         })}
       </time>
       <h1>{post.data.title}</h1>
+      <h5 class="muted">{post.data.status}</h5>
     </header>
     <div class="prose">
       <Content />
