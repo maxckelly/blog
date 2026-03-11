@@ -1,6 +1,6 @@
 ---
 title: Building a mobile AI test agent
-date: 10-03-2026
+date: 2026-03-11
 description: How I built a mobile AI test agent from scratch.
 status: In progress
 ---
