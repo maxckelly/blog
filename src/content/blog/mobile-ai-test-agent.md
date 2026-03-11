@@ -42,7 +42,7 @@ Leaning on Claude, I was able to get a working POC up within the first couple of
 > **Note:** To avoid paying for the Claude API during prototyping, I'm currently copy and pasting the outputs manually. This will eventually be fully automated.
 
 <video controls width="100%" playsinline>
-  <source src="/videos/mobile-ai-agent-demo.mp4" type="video/mp4" />
+  <source src="/videos/mobile-ai-agent-demo.mov" />
 </video>
 
 ## Day 2
