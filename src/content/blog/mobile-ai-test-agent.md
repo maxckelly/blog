@@ -64,3 +64,20 @@ With all the pieces created and working, I shifted focus to wiring everything to
 4. **llama3.2-vision** (7.8 GB) — results weren't good enough and essentially made the whole POC pointless.
 
 I ended up shifting to Google Gemini since we already have an API key for it. After a few runs it produced good results along with a solid summary and some suggestions. However, there are still some gaps — like not scrolling to find a button.
+
+Towards the end of the day everything was working well and the AI agent would spin up and provide us with helpful suggestions, catch necessary bugs and give us a good overview of how the test went.
+
+## Day 3
+
+### Goal: Scripts
+
+Today my focus was creating the scripts to build the app and run the tests. I wanted to ensure that we can build this in any pipeline so its easy to move to another mac or within a github action for example.
+
+Was able to build the script which:
+
+1. Installed the necessary deps
+2. Run pod install
+3. Build app using xcode build
+4. Run the QA agent test
+
+Along with this I also built a slack integration which would send the reviewer markdown file to a specific slack channel.
