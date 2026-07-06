@@ -2,7 +2,7 @@
 title: Learning Swift - Day Six
 date: 2026-07-30
 description: This is day 7 out of 100 of learning Swift
-status: In Progress
+status: Done
 ---
 
 ## The Goal
@@ -127,3 +127,127 @@ extension Animation {
         Text("Hello")
     }
 ```
+
+#### Reading
+
+- For the rest of the day I've continued on with the documentation reading - **Advanced patterns** which covers:
+  - Subscripts
+  - Inheritance
+  - Initialization
+  - Deinitialization
+  - Optional chaining
+  - Error handling
+  - Concurrency
+
+#### Subscript
+
+- A subscript is a shortcut for accessing the member elements of a collection, list or sequence. It allows you to query instances of a type by writing one or more values in square brackets `[]` immediately after the instance name, instead of needing explicit methods for reading and writing values.
+- An example of using subscripts already is `myArray[0]` or `myDictionary["key"]`
+- Swift allows you to define your own custom subscripts for your structs, classes and enums for example:
+
+```swift
+subscript(index: Int) -> ElementType {
+    get {
+
+    }
+
+    set(newValue) {
+
+    }
+}
+```
+
+- Real world example: Imagine you want to create a custom `Matrix` struct to represent a 2D grid. Instead of calling a bulky method like `matrix.getGridValue(row: 1, column: 2)` you can use a multi-parameter subscript.
+
+```swift
+struct Matrix {
+    let rows: Int, columns: Int
+    var grid: [Double]
+
+    subscript(row: Int, column: Int) -> Double {
+        get {
+            return grid[(row * columns) + column]
+        }
+
+        set {
+            grid[(row * columns) + column] = newValue
+        }
+    }
+}
+
+// Usage:
+var myMatrix = Matrix(rows: 2, columns: 2, grid [1.0, 2.0, 3.0, 4.0])
+
+// Reading a value using the subscript
+print(myMatrix[0, 1]) // Outputs: 2.0
+
+// Writing a value using the subscript:
+myMatrix[0, 1] = 5.0
+print(myMatrix[0, 1]) // Outputs 5.0
+```
+
+##### Key takeaways
+
+- Versatility: Subscripts aren't limited to just ints. They can take any type of input parameter and return any type.
+- Overloading: A single type can have multiple subscripts definitions as long as their paramters types or return types are different (overloading)
+- Type subscripts: You can also define subscripts that belong to the type itself rather than an instance by using the `static subscript` keyword.
+
+### Inheritance
+
+- When we have a base class such as
+
+```swift
+class Vehicle {
+    var currentSpeed = 0.0
+    var description: String {
+        return "travelling at \(currentSpeed) miles per hour"
+    }
+
+    func makeNoise() {
+        // do nothing
+    }
+}
+
+// Automatically inherits all of the above.
+class Bicycle: Vehicle {
+    var hasBasket = false
+
+}
+```
+
+- We can then create a `subclass` from the base class using the below
+
+```swift
+class SomeSubclass: SomeSuperclass {
+    // subclass definitions go here.
+}
+```
+
+- Subclasses themselves can be subclasses. For example:
+
+```swift
+class Tandem: Bicycle {
+    var currentNumberOfPassengers = 0
+
+}
+```
+
+### Overriding
+
+- You prefix your overriding definition with `override` keyword.
+- This allows you to override values from the inherited classes. For example:
+
+```swift
+class Train: Vehicle {
+    override func makeNoise() {
+        print("Choo Choo")
+    }
+}
+
+let train = Train()
+train.makeNoise()
+// prints "Choo Choo"
+```
+
+- You can prevent a method, property or subscript from being overridden by marking it as `final`. Do this by writing the `final` modifier before the method, property or subscript.
+- For example: `final var`, `final func`, `final class`, `final subscript`
