@@ -1,0 +1,87 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { groupBySeries } from '../../lib/series';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  const { series } = groupBySeries(posts);
+  return series.map((s) => ({
+    params: { slug: s.slug },
+    props: { series: s },
+  }));
+}
+
+const { series } = Astro.props;
+---
+
+<BaseLayout title={`${series.name} | Max Kelly`} description={`${series.name} — a series in ${series.posts.length} parts`}>
+  <nav>
+    <a href="/">← Back</a>
+  </nav>
+  <header>
+    <h1>{series.name}</h1>
+    <p class="muted series-meta">A series in {series.posts.length} parts</p>
+  </header>
+  <section>
+    {series.posts.map((post, i) => (
+      <a href={`/blog/${post.id}`} class="part-row">
+        <span class="part-number muted">{String(post.data.part ?? i + 1).padStart(2, '0')}</span>
+        <span class="part-title">{post.data.title}</span>
+        <span class="part-date muted">
+          {post.data.date.toLocaleDateString('en-US', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric',
+          })}
+        </span>
+      </a>
+    ))}
+  </section>
+</BaseLayout>
+
+<style>
+  nav {
+    margin-bottom: 3rem;
+  }
+  nav a {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  nav a:hover {
+    color: var(--text);
+  }
+  header {
+    margin-bottom: 2.5rem;
+  }
+  header h1 {
+    font-size: 1.6rem;
+    line-height: 1.3;
+  }
+  .series-meta {
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+  }
+  .part-row {
+    display: flex;
+    align-items: baseline;
+    padding: 0.4rem 0;
+    border-bottom: none;
+    gap: 1rem;
+  }
+  .part-row:hover .part-title {
+    color: var(--accent);
+  }
+  .part-number {
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
+  .part-title {
+    transition: color 0.2s;
+    flex: 1;
+  }
+  .part-date {
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+</style>

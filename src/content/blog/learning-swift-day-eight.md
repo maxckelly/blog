@@ -1,8 +1,10 @@
 ---
-title: Learning Swift - Day Five
+title: Day Eight
 date: 2026-07-26
 description: This is day 8 out of 100 of learning Swift
 status: Done
+series: Learning Swift
+part: 8
 ---
 
 ## The Goal

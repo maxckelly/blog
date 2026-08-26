@@ -1,8 +1,10 @@
 ---
-title: Learning Swift - Day Six
+title: Day Six
 date: 2026-07-29
 description: This is day 6 out of 100 of learning Swift
 status: Done
+series: Learning Swift
+part: 6
 ---
 
 ## The Goal

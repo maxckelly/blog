@@ -5,12 +5,16 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "pdf": "node scripts/generate-cv-pdf.mjs"
   },
   "dependencies": {
     "@astrojs/vercel": "^8.0.0",
     "@vercel/analytics": "^1.6.1",
     "@vercel/blob": "^2.3.1",
     "astro": "^5.18.0"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^25.9.0"
   }
 }

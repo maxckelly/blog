@@ -1,0 +1,186 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { profile, career, skills, education, earlierRoles } from '../data/resume';
+---
+
+<BaseLayout title="CV | Max Kelly" description="Max Kelly — Software Engineer CV">
+  <nav class="cv-nav no-print">
+    <a href="/">← Back</a>
+    <a href="/max-kelly-cv.pdf" download>download pdf ↓</a>
+  </nav>
+
+  <header class="cv-header">
+    <h1>{profile.name}</h1>
+    <p class="title muted">{profile.title}</p>
+    <p class="contact muted">
+      <span class="print-only">{profile.phone} · </span>{profile.email} · {profile.location} ·
+      <a href={`https://${profile.linkedin}`} target="_blank" rel="noopener noreferrer">{profile.linkedin}</a> ·
+      <a href={profile.websiteUrl} target="_blank" rel="noopener noreferrer">{profile.website}</a>
+    </p>
+  </header>
+
+  <section class="section cv-section">
+    <h2 class="section-header">Profile</h2>
+    <p>{profile.summary}</p>
+  </section>
+
+  <section class="section cv-section">
+    <h2 class="section-header">Experience</h2>
+    {career.map((job) => (
+      <div class="job">
+        <div class="job-row">
+          <div>
+            <span class="job-role">{job.role}, </span>
+            {job.url ? (
+              <a href={job.url} target="_blank" rel="noopener noreferrer">{job.company} ↗</a>
+            ) : (
+              <span>{job.company}</span>
+            )}
+          </div>
+          <span class="dates muted">{job.period}</span>
+        </div>
+        {job.tagline && <p class="tagline muted">{job.tagline}</p>}
+        <ul>
+          {job.highlights.map((highlight) => (
+            <li>{highlight}</li>
+          ))}
+        </ul>
+        {job.tech && <p class="tech muted">{job.tech.join(' · ')}</p>}
+      </div>
+    ))}
+  </section>
+
+  <section class="section cv-section">
+    <h2 class="section-header">Skills</h2>
+    <div class="skills-grid">
+      {skills.map((group) => (
+        <div class="skill-group">
+          <h3 class="skill-label">{group.label}</h3>
+          <ul>
+            {group.items.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="section cv-section">
+    <h2 class="section-header">Education</h2>
+    {education.map((entry) => (
+      <div class="edu-entry">
+        <span>{entry.qualification}</span>
+        <span class="muted"> — {entry.institution}</span>
+      </div>
+    ))}
+  </section>
+
+  <section class="section cv-section">
+    <h2 class="section-header">Earlier Roles</h2>
+    {earlierRoles.map((role) => (
+      <div class="edu-entry">
+        <span>{role.company}</span>
+        <span class="muted"> — {role.note}</span>
+      </div>
+    ))}
+  </section>
+</BaseLayout>
+
+<style>
+  .cv-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    font-size: 0.85rem;
+  }
+  .cv-nav a {
+    color: var(--text-muted);
+  }
+  .cv-nav a:hover {
+    color: var(--text);
+  }
+  .cv-header h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+  .cv-header .title {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+  .cv-header .contact {
+    font-size: 0.8rem;
+  }
+  .cv-header .contact a {
+    color: var(--text-muted);
+  }
+  .cv-header .contact a:hover {
+    color: var(--text);
+  }
+  .job {
+    margin-bottom: 1.75rem;
+    break-inside: avoid;
+  }
+  .job-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+  }
+  .job-role {
+    font-weight: 500;
+  }
+  .dates {
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+  .tagline {
+    font-style: italic;
+    font-size: 0.85rem;
+    margin: 0.25rem 0 0.5rem;
+  }
+  .job ul {
+    font-size: 0.9rem;
+    margin-top: 0.4rem;
+  }
+  .tech {
+    font-size: 0.75rem;
+    margin-top: 0.4rem;
+  }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.25rem;
+  }
+  .skill-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+  .skill-group ul {
+    font-size: 0.85rem;
+  }
+  .edu-entry {
+    padding: 0.2rem 0;
+    font-size: 0.9rem;
+  }
+  .print-only {
+    display: none;
+  }
+
+  @media print {
+    .no-print {
+      display: none;
+    }
+    .print-only {
+      display: inline;
+    }
+    .cv-section {
+      margin-top: 2rem;
+    }
+    .job {
+      margin-bottom: 1.25rem;
+    }
+  }
+</style>

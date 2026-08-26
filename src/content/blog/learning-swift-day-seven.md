@@ -1,8 +1,10 @@
 ---
-title: Learning Swift - Day Six
+title: Day Seven
 date: 2026-07-30
 description: This is day 7 out of 100 of learning Swift
 status: Done
+series: Learning Swift
+part: 7
 ---
 
 ## The Goal

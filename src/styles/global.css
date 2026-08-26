@@ -101,3 +101,18 @@ ul li {
   background: var(--accent);
   color: var(--bg);
 }
+
+@media print {
+  html {
+    animation: none;
+    font-size: 12.5px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  html::before {
+    display: none;
+  }
+  body {
+    padding: 3rem 1.5rem;
+  }
+}

@@ -1,8 +1,10 @@
 ---
-title: Learning Swift - Day one
+title: Day One
 date: 2026-06-22
 description: This is day one out of 100 of learning Swift.
 status: Done
+series: Learning Swift
+part: 1
 ---
 
 ## The Goal

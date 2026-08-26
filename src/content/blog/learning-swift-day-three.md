@@ -1,8 +1,10 @@
 ---
-title: Learning Swift - Day Three
+title: Day Three
 date: 2026-07-24
 description: This is day 3 out of 100 of learning Swift
 status: Done
+series: Learning Swift
+part: 3
 ---
 
 ## The Goal

@@ -1,7 +1,7 @@
 ---
-title: Learning Swift - Day Five
-date: 2026-07-26
-description: This is day 5 out of 100 of learning Swift
+title: AWS Claude Code event
+date: 2026-07-02
+description: Notes from an AWS Claude Code event on harness engineering and agentic coding
 status: Done
 ---
 

@@ -1,8 +1,10 @@
 ---
-title: Learning Swift - Day Five
+title: Day Five
 date: 2026-07-26
 description: This is day 5 out of 100 of learning Swift
 status: Done
+series: Learning Swift
+part: 5
 ---
 
 ## The Goal

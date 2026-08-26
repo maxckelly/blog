@@ -29,6 +29,12 @@
         "status": {
           "type": "string"
         },
+        "series": {
+          "type": "string"
+        },
+        "part": {
+          "type": "number"
+        },
         "$schema": {
           "type": "string"
         }

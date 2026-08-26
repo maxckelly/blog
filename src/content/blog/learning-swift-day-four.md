@@ -1,8 +1,10 @@
 ---
-title: Learning Swift - Day Four
+title: Day Four
 date: 2026-07-25
 description: This is day 4 out of 100 of learning Swift
 status: Done
+series: Learning Swift
+part: 4
 ---
 
 ## The Goal
