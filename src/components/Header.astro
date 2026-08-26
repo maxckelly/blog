@@ -6,10 +6,29 @@
   <h1>Max Kelly</h1>
   <p class="contact">
     <span class="muted">maxckel@gmail.com</span>
-    <span class="muted"> · </span>
-    <a href="mailto:max@example.com">say hello ↗</a>
+    <button class="copy-email" data-email="maxckel@gmail.com" aria-label="Copy email address" title="Copy email">
+      <svg class="icon-copy" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      <svg class="icon-check" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+    </button>
   </p>
 </header>
+
+<script>
+  const btn = document.querySelector<HTMLButtonElement>('.copy-email');
+  btn?.addEventListener('click', async () => {
+    const email = btn.dataset.email ?? '';
+    try {
+      await navigator.clipboard.writeText(email);
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.classList.remove('copied');
+      }, 1500);
+    } catch {
+      // Clipboard access denied — fall back to the mail client
+      window.location.href = `mailto:${email}`;
+    }
+  });
+</script>
 
 <style>
   header {
@@ -25,5 +44,28 @@
   }
   .contact a {
     color: var(--text);
+  }
+  .copy-email {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-left: 0.35rem;
+    cursor: pointer;
+    color: var(--text-muted);
+    display: inline-flex;
+    vertical-align: middle;
+    transition: color 0.2s;
+  }
+  .copy-email:hover {
+    color: var(--text);
+  }
+  .copy-email .icon-check {
+    display: none;
+  }
+  .copy-email.copied .icon-copy {
+    display: none;
+  }
+  .copy-email.copied .icon-check {
+    display: inline;
   }
 </style>
