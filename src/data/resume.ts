@@ -32,7 +32,7 @@ export const profile = {
   name: "Max Kelly",
   title: "Software Engineer",
   summary:
-    "Tech founder with a strong track record of shipping user-loved products. Skilled in React, React Native, Supabase, Node.js, and product design. Experience across startups and scale-ups, with a focus on building consumer apps that scale.",
+    "Tech founder with a strong track record of shipping user-loved products. Skilled in React, React Native, Swift / SwiftUI, Supabase, Node.js, and product design. Experience across startups and scale-ups, with a focus on building consumer apps that scale.",
   email: "maxckel@gmail.com",
   phone: "0419 096 087",
   location: "Sydney, NSW",
@@ -52,12 +52,13 @@ export const career: Job[] = [
     tagline:
       "Digital shopping assistant simplifying online shopping through wishlisting and social commerce.",
     highlights: [
-      "Brought mobile development in-house and took ownership of the entire React Native application",
+      "Brought mobile development in-house and led the full rewrite of the React Native app to native Swift, designed for the new iPhone Duo",
+      "Built an AI-powered product suggestion flow that analyses a product and its image to return visually and contextually similar products",
       "Elevated product quality by implementing TanStack Query, feature flags, OTA updates, and a modular code architecture",
       "Built performant caching layer and native SwiftUI long-press interactions to enhance the user experience",
       "Drove stability improvements by triaging and resolving existing bugs across the codebase",
     ],
-    tech: ["React Native", "TypeScript", "TanStack Query", "SwiftUI"],
+    tech: ["Swift", "SwiftUI", "React Native", "TypeScript", "TanStack Query", "AI"],
   },
   {
     role: "Software Engineer",
