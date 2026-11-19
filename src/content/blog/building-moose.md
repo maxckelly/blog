@@ -70,7 +70,7 @@ What they *do* worry about is **members leaving**. A member who gets bored and c
 
 > Give your members variety without them leaving you, and give them a reason to stay on (or move up to) the membership tier that includes it.
 
-That changed what Moose measures. Instead of seat-fill, the studio dashboard shows **retention**: do members who use Moose stick around longer than those who don't, and do they move up to a higher tier? Studios bundle Moose into the tiers they choose, so it becomes a reason to be on those tiers.
+That changed what Moose measures. Instead of seat-fill, Moose now tracks **retention**: do members who use Moose stick around longer than those who don't, and do they move up to a higher tier? Studios bundle Moose into the tiers they choose, so it becomes a reason to be on those tiers.
 
 <figure>
   <img src="/images/moose/05-portal-onboarding.webp" alt="The Moose studio portal's first onboarding step: a progress bar (booking system, memberships, upgrade fee, payouts) above a list of supported booking systems to connect" />
@@ -81,7 +81,7 @@ That changed what Moose measures. Instead of seat-fill, the studio dashboard sho
 
 Studios set which of their membership tiers **include** Moose, and which tiers can **buy** it in the app as an add-on. The in-app purchase runs through Stripe, and the studio's share is paid out to them automatically. For included tiers, the studio pays Moose a small weekly fee per member who has access.
 
-The money stays simple on purpose. There is one ledger for credits and one mirror of Stripe for subscriptions, and nothing else.
+The money stays simple on purpose: one ledger for credits, one mirror of Stripe for member subscriptions, and one record of what each studio was invoiced. Nothing else holds money.
 
 ---
 
@@ -192,7 +192,7 @@ The same per-check results drive the portal screen above, so the studio sees exa
 Moose is live on the [App Store](https://apps.apple.com/au/app/moose-studio-crossover/id6780323407). Studios are onboarding in pairs, so each one launches with a partner already in place. Next up: getting those first partnerships to the point where the retention numbers say something.
 
 <figure>
-  <img src="/images/moose/07-growth.svg" alt="Line chart: cumulative members linked and bookings made, indexed to today. Both sit near zero until the week of 19 October, jump when the first studios go live, then keep climbing through November." />
+  <img src="/images/moose/07-growth.svg" alt="Line chart: cumulative members linked and bookings made, indexed to today. Both sit near zero until the week of 19 October, jump that week, then keep climbing through November." />
   <figcaption>Members linking a studio and bookings made, from PostHog. Cumulative and indexed rather than raw counts: it is early.</figcaption>
 </figure>
 
