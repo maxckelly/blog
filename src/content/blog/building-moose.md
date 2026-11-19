@@ -2,7 +2,7 @@
 title: "Building Moose: a network for independent fitness studios"
 date: 2026-11-19
 description: Why I built Moose, how studio partnerships and credits work, and what's under the hood.
-status: In progress
+status: Done
 ---
 
 <figure class="phone">
@@ -70,7 +70,7 @@ What they *do* worry about is **members leaving**. A member who gets bored and c
 
 > Give your members variety without them leaving you, and give them a reason to stay on (or move up to) the membership tier that includes it.
 
-That changed what Moose measures. Instead of seat-fill, the studio dashboard shows **retention**: do members who use Moose stick around longer than those who don't, and do they move up to a higher tier? Studios bundle Moose into the tiers they choose, so it becomes a reason to be on those tiers.
+That changed what Moose measures. Instead of seat-fill, Moose now tracks **retention**: do members who use Moose stick around longer than those who don't, and do they move up to a higher tier? Studios bundle Moose into the tiers they choose, so it becomes a reason to be on those tiers.
 
 <figure>
   <img src="/images/moose/05-portal-onboarding.webp" alt="The Moose studio portal's first onboarding step: a progress bar (booking system, memberships, upgrade fee, payouts) above a list of supported booking systems to connect" />
@@ -81,7 +81,7 @@ That changed what Moose measures. Instead of seat-fill, the studio dashboard sho
 
 Studios set which of their membership tiers **include** Moose, and which tiers can **buy** it in the app as an add-on. The in-app purchase runs through Stripe, and the studio's share is paid out to them automatically. For included tiers, the studio pays Moose a small weekly fee per member who has access.
 
-The money stays simple on purpose. There is one ledger for credits and one mirror of Stripe for subscriptions, and nothing else.
+The money stays simple on purpose: one ledger for credits, one mirror of Stripe for member subscriptions, and one record of what each studio was invoiced. Nothing else holds money.
 
 ---
 
@@ -138,11 +138,6 @@ Those two flags carry most of the vendor weirdness. If a system doesn't enforce 
 
 Timetables and memberships come the other way, through scheduled syncs. A full sync runs every six hours. A lighter one runs every 30 minutes, only for studios with an upcoming Moose booking, so a cancelled class gets noticed in time to refund the member and tell them.
 
-<figure>
-  <img src="/images/moose/06-portal-integration.webp" alt="The studio portal's booking system settings: the connected system, last sync, what Moose can and can't see, and per-check connection health marked Working" />
-  <figcaption>The portal's booking system screen: what Moose can and can't see, and the health of each check, straight from the same per-check results.</figcaption>
-</figure>
-
 ### 2. All the money goes through one SQL function
 
 Credits are money-like, so I treat them that way.
@@ -176,7 +171,7 @@ Now health is tracked **per check**: credentials, classes, memberships and membe
 | Vendor outage | The vendor | The portal only (no point emailing the studio) |
 | Our configuration | Us | Our ops Slack channel |
 
-The same per-check results drive the portal screen above, so the studio sees exactly what we see.
+The same per-check results drive the studio portal's booking system screen, so the studio sees exactly what we see.
 
 ---
 
@@ -192,7 +187,7 @@ The same per-check results drive the portal screen above, so the studio sees exa
 Moose is live on the [App Store](https://apps.apple.com/au/app/moose-studio-crossover/id6780323407). Studios are onboarding in pairs, so each one launches with a partner already in place. Next up: getting those first partnerships to the point where the retention numbers say something.
 
 <figure>
-  <img src="/images/moose/07-growth.svg" alt="Line chart: cumulative members linked and bookings made, indexed to today. Both sit near zero until the week of 19 October, jump when the first studios go live, then keep climbing through November." />
+  <img src="/images/moose/07-growth.svg" alt="Line chart: cumulative members linked and bookings made, indexed to today. Both sit near zero until the week of 19 October, jump that week, then keep climbing through November." />
   <figcaption>Members linking a studio and bookings made, from PostHog. Cumulative and indexed rather than raw counts: it is early.</figcaption>
 </figure>
 

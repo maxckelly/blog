@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 290" width="100%" role="img" font-family="'JetBrains Mono', 'SF Mono', monospace">
   <title>Moose members linked and bookings made, cumulative, September to November 2026</title>
-  <desc>Both lines are cumulative and indexed so that today equals 100. Studio links and bookings were near zero until the week of 19 October, when both jumped as the first studios went live, then kept climbing more slowly through November.</desc>
+  <desc>Both lines are cumulative and indexed so that today equals 100. Studio links and bookings were near zero until the week of 19 October, when both jumped, then kept climbing more slowly through November.</desc>
   <style>
     .grid { stroke: #262626; stroke-width: 1; }
     .ax { fill: #737373; font-size: 11px; }
@@ -14,7 +14,7 @@
   <text class="ax" x="60" y="144.0" text-anchor="end">50</text>
   <text class="ax" x="60" y="54" text-anchor="end">100</text>
   <line x1="310.0" y1="32" x2="310.0" y2="230" stroke="#3a3a3a" stroke-dasharray="3 3"/>
-  <text class="note" x="304.0" y="26" text-anchor="end">first studios live</text>
+  <text class="note" x="304.0" y="26" text-anchor="end">first busy week</text>
   <polyline points="70.0,226.4 150.0,222.8 230.0,183.2 310.0,111.2 390.0,93.2 470.0,82.4 550.0,75.2 630.0,50.0" fill="none" stroke="#86efac" stroke-width="2" stroke-linejoin="round"/>
   <polyline points="70.0,230.0 150.0,230.0 230.0,224.4 310.0,106.2 390.0,72.5 470.0,72.5 550.0,61.2 630.0,50.0" fill="none" stroke="#7dd3fc" stroke-width="2" stroke-linejoin="round"/>
   <circle cx="70.0" cy="226.4" r="2.5" fill="#86efac"/>
