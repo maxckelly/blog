@@ -174,4 +174,49 @@ const pageTitle = seriesInfo
     margin-bottom: 1.25rem;
     padding-left: 1.25rem;
   }
+  .prose :global(img), .prose :global(video) {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+  }
+  .prose :global(figure) {
+    margin: 2rem 0;
+  }
+  .prose :global(figcaption) {
+    margin-top: 0.6rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-align: center;
+  }
+  .prose :global(.phones) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.75rem;
+    align-items: start;
+  }
+  .prose :global(.phones img) {
+    width: 100%;
+  }
+  .prose :global(figure.phone img) {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  .prose :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.25rem;
+    font-size: 0.85rem;
+  }
+  .prose :global(th), .prose :global(td) {
+    border-bottom: 1px solid #262626;
+    padding: 0.4rem 0.5rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  .prose :global(hr) {
+    border: none;
+    border-top: 1px solid #262626;
+    margin: 2.5rem 0;
+  }
 </style>

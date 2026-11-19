@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 290" width="100%" role="img" font-family="'JetBrains Mono', 'SF Mono', monospace">
+  <title>Moose members linked and bookings made, cumulative, September to November 2026</title>
+  <desc>Both lines are cumulative and indexed so that today equals 100. Studio links and bookings were near zero until the week of 19 October, when both jumped as the first studios went live, then kept climbing more slowly through November.</desc>
+  <style>
+    .grid { stroke: #262626; stroke-width: 1; }
+    .ax { fill: #737373; font-size: 11px; }
+    .lbl { font-size: 12px; font-weight: 500; }
+    .note { fill: #737373; font-size: 11px; }
+  </style>
+  <line class="grid" x1="70" y1="230" x2="630" y2="230"/>
+  <line class="grid" x1="70" y1="140.0" x2="630" y2="140.0" stroke-dasharray="2 4"/>
+  <line class="grid" x1="70" y1="50" x2="630" y2="50" stroke-dasharray="2 4"/>
+  <text class="ax" x="60" y="234" text-anchor="end">0</text>
+  <text class="ax" x="60" y="144.0" text-anchor="end">50</text>
+  <text class="ax" x="60" y="54" text-anchor="end">100</text>
+  <line x1="310.0" y1="32" x2="310.0" y2="230" stroke="#3a3a3a" stroke-dasharray="3 3"/>
+  <text class="note" x="304.0" y="26" text-anchor="end">first studios live</text>
+  <polyline points="70.0,226.4 150.0,222.8 230.0,183.2 310.0,111.2 390.0,93.2 470.0,82.4 550.0,75.2 630.0,50.0" fill="none" stroke="#86efac" stroke-width="2" stroke-linejoin="round"/>
+  <polyline points="70.0,230.0 150.0,230.0 230.0,224.4 310.0,106.2 390.0,72.5 470.0,72.5 550.0,61.2 630.0,50.0" fill="none" stroke="#7dd3fc" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="70.0" cy="226.4" r="2.5" fill="#86efac"/>
+  <circle cx="150.0" cy="222.8" r="2.5" fill="#86efac"/>
+  <circle cx="230.0" cy="183.2" r="2.5" fill="#86efac"/>
+  <circle cx="310.0" cy="111.2" r="2.5" fill="#86efac"/>
+  <circle cx="390.0" cy="93.2" r="2.5" fill="#86efac"/>
+  <circle cx="470.0" cy="82.4" r="2.5" fill="#86efac"/>
+  <circle cx="550.0" cy="75.2" r="2.5" fill="#86efac"/>
+  <circle cx="630.0" cy="50.0" r="2.5" fill="#86efac"/>
+  <circle cx="70.0" cy="230.0" r="2.5" fill="#7dd3fc"/>
+  <circle cx="150.0" cy="230.0" r="2.5" fill="#7dd3fc"/>
+  <circle cx="230.0" cy="224.4" r="2.5" fill="#7dd3fc"/>
+  <circle cx="310.0" cy="106.2" r="2.5" fill="#7dd3fc"/>
+  <circle cx="390.0" cy="72.5" r="2.5" fill="#7dd3fc"/>
+  <circle cx="470.0" cy="72.5" r="2.5" fill="#7dd3fc"/>
+  <circle cx="550.0" cy="61.2" r="2.5" fill="#7dd3fc"/>
+  <circle cx="630.0" cy="50.0" r="2.5" fill="#7dd3fc"/>
+  <text class="lbl" x="398.0" y="62.5" fill="#7dd3fc">bookings</text>
+  <text class="lbl" x="398.0" y="113.2" fill="#86efac">members linked</text>
+  <text class="ax" x="70.0" y="252" text-anchor="middle">28 Sep</text>
+  <text class="ax" x="150.0" y="252" text-anchor="middle">5 Oct</text>
+  <text class="ax" x="230.0" y="252" text-anchor="middle">12 Oct</text>
+  <text class="ax" x="310.0" y="252" text-anchor="middle">19 Oct</text>
+  <text class="ax" x="390.0" y="252" text-anchor="middle">26 Oct</text>
+  <text class="ax" x="470.0" y="252" text-anchor="middle">2 Nov</text>
+  <text class="ax" x="550.0" y="252" text-anchor="middle">9 Nov</text>
+  <text class="ax" x="630.0" y="252" text-anchor="middle">16 Nov</text>
+  <text class="note" x="60" y="280">cumulative, indexed to today = 100 · test accounts excluded</text>
+</svg>

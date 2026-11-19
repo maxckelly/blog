@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 400" width="100%" role="img" font-family="'JetBrains Mono', 'SF Mono', monospace">
+  <title>How Moose partnerships work</title>
+  <desc>Studio A partners with Studios B and C, so A's members can book there. Studio B also partners with Studio D, but that does not extend to A's members. A booking costs the destination studio's weekly price divided by the home studio's.</desc>
+  <style>
+    .box { fill: #141414; stroke: #3a3a3a; stroke-width: 1; }
+    .home { fill: #0f1a12; stroke: #86efac; stroke-width: 1.25; }
+    .reach { fill: #141414; stroke: #4ade80; stroke-width: 1; }
+    .off { fill: none; stroke: #3a3a3a; stroke-width: 1; stroke-dasharray: 4 4; }
+    .t { fill: #d4d4d4; font-size: 13px; font-weight: 500; }
+    .s { fill: #737373; font-size: 11px; }
+    .g { fill: #86efac; }
+    .edge { stroke: #737373; stroke-width: 1.5; fill: none; }
+    .edgeoff { stroke: #3a3a3a; stroke-width: 1.5; fill: none; stroke-dasharray: 4 4; }
+    .lbl { fill: #737373; font-size: 11px; }
+  </style>
+
+  <!-- edges -->
+  <line class="edge" x1="185" y1="140" x2="265" y2="80"/>
+  <line class="edge" x1="185" y1="160" x2="265" y2="220"/>
+  <line class="edge" x1="415" y1="68" x2="500" y2="68"/>
+  <text class="lbl" x="205" y="98" text-anchor="end">partners</text>
+  <text class="lbl" x="205" y="210" text-anchor="end">partners</text>
+  <text class="lbl" x="457" y="60" text-anchor="middle">partners</text>
+
+  <!-- Studio A (home) -->
+  <rect class="home" x="30" y="122" width="155" height="56" rx="8"/>
+  <text class="t g" x="107" y="146" text-anchor="middle">Studio A</text>
+  <text class="s" x="107" y="164" text-anchor="middle">your home studio</text>
+
+  <!-- Studio B -->
+  <rect class="reach" x="265" y="40" width="150" height="56" rx="8"/>
+  <text class="t" x="340" y="64" text-anchor="middle">Studio B</text>
+  <text class="s" x="340" y="82" text-anchor="middle">yoga · bookable</text>
+
+  <!-- Studio C -->
+  <rect class="reach" x="265" y="200" width="150" height="56" rx="8"/>
+  <text class="t" x="340" y="224" text-anchor="middle">Studio C</text>
+  <text class="s" x="340" y="242" text-anchor="middle">pilates · bookable</text>
+
+  <!-- Studio D (not reachable from A) -->
+  <rect class="off" x="500" y="40" width="150" height="56" rx="8"/>
+  <text class="t" x="575" y="64" text-anchor="middle" fill-opacity="0.5">Studio D</text>
+  <text class="s" x="575" y="82" text-anchor="middle">boxing</text>
+  <text class="s" x="575" y="116" text-anchor="middle">B's partner, not A's:</text>
+  <text class="s" x="575" y="132" text-anchor="middle">A's members can't book</text>
+
+  <!-- credit cost panel -->
+  <rect class="box" x="30" y="296" width="620" height="84" rx="8"/>
+  <text class="t" x="50" y="322">credit cost = destination price ÷ home price</text>
+  <text class="s" x="50" y="346">home $50/wk → class at a $75/wk studio  =  <tspan class="g">1.50 credits</tspan></text>
+  <text class="s" x="50" y="366">home $75/wk → class at a $50/wk studio  =  <tspan class="g">0.67 credits</tspan></text>
+</svg>
