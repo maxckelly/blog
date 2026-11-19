@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 450" width="100%" role="img" font-family="'JetBrains Mono', 'SF Mono', monospace">
+  <title>Moose system architecture</title>
+  <desc>The iOS app and the studio portal both call one API service on Fly.io. The API reads and writes Postgres on Supabase, books classes live against each studio's booking system, and hands background work to Trigger.dev, which syncs schedules and memberships from the booking systems.</desc>
+  <defs>
+    <marker id="b-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#737373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <style>
+    .box { fill: #141414; stroke: #3a3a3a; stroke-width: 1; }
+    .core { fill: #0f1a12; stroke: #86efac; stroke-width: 1.25; }
+    .ext { fill: none; stroke: #3a3a3a; stroke-width: 1; stroke-dasharray: 4 4; }
+    .t { fill: #d4d4d4; font-size: 13px; font-weight: 500; }
+    .s { fill: #737373; font-size: 11px; }
+    .g { fill: #86efac; }
+    .a { stroke: #737373; stroke-width: 1.5; fill: none; }
+    .lbl { fill: #737373; font-size: 11px; }
+  </style>
+
+  <!-- clients -->
+  <rect class="box" x="60" y="30" width="200" height="56" rx="8"/>
+  <text class="t" x="160" y="54" text-anchor="middle">iOS app</text>
+  <text class="s" x="160" y="72" text-anchor="middle">members · SwiftUI</text>
+
+  <rect class="box" x="420" y="30" width="200" height="56" rx="8"/>
+  <text class="t" x="520" y="54" text-anchor="middle">Studio portal</text>
+  <text class="s" x="520" y="72" text-anchor="middle">studio owners + staff</text>
+
+  <path class="a" d="M160 86 V112 H290 V140" marker-end="url(#b-arrow)"/>
+  <path class="a" d="M520 86 V112 H390 V140" marker-end="url(#b-arrow)"/>
+
+  <!-- api -->
+  <rect class="core" x="190" y="140" width="300" height="56" rx="8"/>
+  <text class="t g" x="340" y="164" text-anchor="middle">api</text>
+  <text class="s" x="340" y="182" text-anchor="middle">Fastify + TypeScript on Fly.io</text>
+
+  <!-- side services -->
+  <rect class="ext" x="520" y="148" width="140" height="40" rx="8"/>
+  <text class="s" x="590" y="172" text-anchor="middle">Stripe · PostHog</text>
+  <line class="a" x1="490" y1="168" x2="518" y2="168" marker-end="url(#b-arrow)"/>
+
+  <!-- postgres -->
+  <rect class="core" x="40" y="260" width="250" height="64" rx="8"/>
+  <text class="t g" x="165" y="285" text-anchor="middle">Postgres (Supabase)</text>
+  <text class="s" x="165" y="304" text-anchor="middle">RLS · credit ledger · SQL fns</text>
+  <path class="a" d="M240 196 V228 H165 V258" marker-end="url(#b-arrow)"/>
+  <text class="lbl" x="172" y="222" text-anchor="middle">SQL</text>
+
+  <!-- trigger -->
+  <rect class="box" x="390" y="260" width="250" height="64" rx="8"/>
+  <text class="t" x="515" y="285" text-anchor="middle">Trigger.dev</text>
+  <text class="s" x="515" y="304" text-anchor="middle">syncs · health · email · push</text>
+  <path class="a" d="M440 196 V228 H515 V258" marker-end="url(#b-arrow)"/>
+  <text class="lbl" x="512" y="222" text-anchor="middle">dispatch</text>
+  <line class="a" x1="390" y1="292" x2="292" y2="292" marker-end="url(#b-arrow)"/>
+  <text class="lbl" x="352" y="284" text-anchor="start">RPC</text>
+
+  <!-- booking systems -->
+  <rect class="box" x="90" y="378" width="500" height="56" rx="8"/>
+  <text class="t" x="340" y="402" text-anchor="middle">Studios' booking systems</text>
+  <text class="s" x="340" y="420" text-anchor="middle">Mindbody · GymMaster · Momence · Glofox · Hapana</text>
+
+  <line class="a" x1="340" y1="196" x2="340" y2="376" marker-end="url(#b-arrow)"/>
+  <text class="lbl" x="348" y="350" text-anchor="start">book / cancel</text>
+  <path class="a" d="M515 324 V350 H470 V376" marker-end="url(#b-arrow)"/>
+  <text class="lbl" x="522" y="348" text-anchor="start">sync</text>
+</svg>
