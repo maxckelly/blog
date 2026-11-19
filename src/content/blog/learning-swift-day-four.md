@@ -1,7 +1,7 @@
 ---
 title: Day Four
 date: 2026-07-25
-description: This is day 4 out of 100 of learning Swift
+description: "Day 4 of 100 days learning Swift: a reference of Swift operators (ternary, nil-coalescing, ranges), strings and substrings, arrays, sets, dictionaries and control flow."
 status: Done
 series: Learning Swift
 part: 4

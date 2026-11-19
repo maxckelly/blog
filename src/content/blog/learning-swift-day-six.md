@@ -1,7 +1,7 @@
 ---
 title: Day Six
 date: 2026-07-29
-description: This is day 6 out of 100 of learning Swift
+description: "Day 6 of 100 days learning Swift: passing views into views with generics in SwiftUI, and how SwiftUI animations work."
 status: Done
 series: Learning Swift
 part: 6

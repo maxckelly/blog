@@ -1,7 +1,7 @@
 ---
 title: Day Five
 date: 2026-07-26
-description: This is day 5 out of 100 of learning Swift
+description: "Day 5 of 100 days learning Swift: structuring a SwiftUI feature module that fetches data from Supabase into a store and renders it, plus notes on layout and data flow."
 status: Done
 series: Learning Swift
 part: 5

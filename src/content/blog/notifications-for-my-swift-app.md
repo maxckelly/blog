@@ -1,7 +1,7 @@
 ---
 title: Building notifications into Moose
 date: 2026-07-22
-description: v1 for a full e2e notifications flow for Moose
+description: "How I'm building push notifications for the Moose iOS app with Apple APNs directly, Supabase and Trigger.dev: scope, architecture, data model and a day-by-day build log."
 status: In Progress
 ---
 

@@ -3,9 +3,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import BlogSection from '../components/BlogSection.astro';
 import Career from '../components/Career.astro';
+import { graph, personSchema, websiteSchema } from '../lib/seo';
+
+const jsonLd = graph(websiteSchema(), personSchema());
 ---
 
-<BaseLayout>
+<BaseLayout jsonLd={jsonLd}>
   <Header />
   <BlogSection />
   <Career />

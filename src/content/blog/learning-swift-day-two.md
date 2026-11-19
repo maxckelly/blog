@@ -1,7 +1,7 @@
 ---
 title: Day Two
 date: 2026-07-22
-description: This is day 2 out of 100 of learning Swift
+description: "Day 2 of 100 days learning Swift: enums with raw values, structs, concurrency with async/await, protocols and extensions, error handling and generics."
 status: Done
 series: Learning Swift
 part: 2
