@@ -9,6 +9,8 @@
     "pdf": "node scripts/generate-cv-pdf.mjs"
   },
   "dependencies": {
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.6",
     "@astrojs/vercel": "^8.0.0",
     "@vercel/analytics": "^1.6.1",
     "@vercel/blob": "^2.3.1",

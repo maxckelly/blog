@@ -1,7 +1,7 @@
 ---
 title: Day Three
 date: 2026-07-24
-description: This is day 3 out of 100 of learning Swift
+description: "Day 3 of 100 days learning Swift: Stanford CS193p lecture notes on withAnimation, the Equatable protocol and synthesized conformance for structs and enums."
 status: Done
 series: Learning Swift
 part: 3

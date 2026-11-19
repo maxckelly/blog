@@ -1,7 +1,7 @@
 ---
 title: Day Eight
 date: 2026-07-26
-description: This is day 8 out of 100 of learning Swift
+description: "Day 8 of 100 days learning Swift: SwiftUI tips (aspectRatio, number formatting, if-let shorthand, live timers) and when to use Equatable, Hashable and other core protocols."
 status: Done
 series: Learning Swift
 part: 8

@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { groupBySeries } from '../../lib/series';
+import { blogPostingSchema, breadcrumbSchema, graph, personSchema, postModified } from '../../lib/seo';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -37,9 +38,28 @@ const { Content } = await render(post);
 const pageTitle = seriesInfo
   ? `${seriesInfo.name}: ${post.data.title} | Max Kelly`
   : `${post.data.title} | Max Kelly`;
+
+const crumbs = [
+  { name: 'Home', path: '/' },
+  ...(seriesInfo ? [{ name: seriesInfo.name, path: `/series/${seriesInfo.slug}` }] : []),
+  { name: post.data.title, path: `/blog/${post.id}` },
+];
+const jsonLd = graph(
+  blogPostingSchema(post, seriesInfo),
+  breadcrumbSchema(crumbs),
+  personSchema(),
+);
 ---
 
-<BaseLayout title={pageTitle} description={post.data.description}>
+<BaseLayout
+  title={pageTitle}
+  description={post.data.description}
+  type="article"
+  publishedTime={post.data.date}
+  modifiedTime={postModified(post)}
+  markdownUrl={`/blog/${post.id}.md`}
+  jsonLd={jsonLd}
+>
   <nav>
     <a href="/">← Back</a>
   </nav>
@@ -51,13 +71,16 @@ const pageTitle = seriesInfo
           <span class="muted"> · Part {seriesInfo.part} of {seriesInfo.total}</span>
         </p>
       )}
-      <time class="muted" datetime={post.data.date.toISOString()}>
-        {post.data.date.toLocaleDateString('en-US', {
-          month: 'long',
-          day: 'numeric',
-          year: 'numeric',
-        })}
-      </time>
+      <p class="byline muted">
+        <time datetime={post.data.date.toISOString()}>
+          {post.data.date.toLocaleDateString('en-US', {
+            month: 'long',
+            day: 'numeric',
+            year: 'numeric',
+          })}
+        </time>
+        <span> · by <a href="/" rel="author">Max Kelly</a></span>
+      </p>
       <h1>{post.data.title}</h1>
       <h5 class="muted">{post.data.status}</h5>
     </header>
@@ -122,8 +145,15 @@ const pageTitle = seriesInfo
   .series-nav a:hover {
     color: var(--accent);
   }
-  article header time {
+  .byline {
     font-size: 0.8rem;
+  }
+  .byline a {
+    color: inherit;
+    border-bottom: none;
+  }
+  .byline a:hover {
+    color: var(--text);
   }
   article header h1 {
     font-size: 1.6rem;

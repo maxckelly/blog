@@ -1,7 +1,7 @@
 ---
 title: Day Seven
 date: 2026-07-30
-description: This is day 7 out of 100 of learning Swift
+description: "Day 7 of 100 days learning Swift: SwiftUI animation tips (named animations, .transaction, suppressing animation), subscripts, inheritance and overriding."
 status: Done
 series: Learning Swift
 part: 7

@@ -1,7 +1,7 @@
 ---
 title: Building a mobile AI test agent called Tappy
 date: 2026-03-11
-description: How I built a mobile AI test agent from scratch.
+description: "How I built Tappy, an AI agent that tests iOS apps like a real user, using Claude, idb, the iOS Simulator and Python: architecture and a day-by-day build log."
 status: In progress
 ---
 

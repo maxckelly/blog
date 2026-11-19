@@ -1,9 +1,20 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { profile, career, skills, education, earlierRoles } from '../data/resume';
+import { absoluteUrl, graph, personRef, personSchema } from '../lib/seo';
+
+const jsonLd = graph(
+  {
+    '@type': 'ProfilePage',
+    url: absoluteUrl('/cv'),
+    name: 'Max Kelly: Software Engineer CV',
+    mainEntity: personRef(),
+  },
+  personSchema(true),
+);
 ---
 
-<BaseLayout title="CV | Max Kelly" description="Max Kelly — Software Engineer CV">
+<BaseLayout title="CV | Max Kelly" description={`CV of Max Kelly, a Sydney-based software engineer. ${profile.summary}`} type="profile" jsonLd={jsonLd}>
   <nav class="cv-nav no-print">
     <a href="/">← Back</a>
     <a href="/max-kelly-cv.pdf" download>download pdf ↓</a>

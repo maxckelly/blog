@@ -1,7 +1,7 @@
 ---
 title: Day One
 date: 2026-06-22
-description: This is day one out of 100 of learning Swift.
+description: "Day 1 of 100 days learning Swift as a React Native developer: Stanford CS193p notes on SwiftUI models, @State and @Binding, structs vs classes, enums, generics, optionals and extensions."
 status: Done
 series: Learning Swift
 part: 1
